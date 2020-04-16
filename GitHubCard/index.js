@@ -39,7 +39,12 @@ const followersArray = [];
           */
          const userCardCreator = (obj) => {
            // <div class="card">
+           let cardDiv = document.createElement('div');
+           cardDiv.classList.add('card');
            //   <img src={image url of user} />
+           let userImg = document.createElement('img');
+           userImg.src = obj.avatar_url;
+           cardDiv.appendChild(userImg);
            //   <div class="card-info">
            //     <h3 class="name">{users name}</h3>
            //     <p class="username">{users user name}</p>
