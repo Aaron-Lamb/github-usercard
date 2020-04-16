@@ -91,12 +91,16 @@ const userCardCreator = (obj) => {
   bigknell
   */
  let cardsDiv = document.querySelector('.cards');
+ followersArray.push('Aaron-Lamb', 'tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell')
+ console.log(followersArray);
  
- axios.get('https://api.github.com/users/Aaron-Lamb')
- .then(response => {
-  const newCard = userCardCreator(response.data);
-  cardsDiv.appendChild(newCard);
- })
- .catch(error => {
-   console.log(error)
+ followersArray.forEach((user) => {
+  axios.get(`https://api.github.com/users/${user}`)
+  .then(response => {
+   const card = userCardCreator(response.data);
+   cardsDiv.appendChild(card);
+  })
+  .catch(error => {
+    console.log(error)
+  })
  })
