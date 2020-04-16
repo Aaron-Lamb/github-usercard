@@ -90,10 +90,12 @@ const userCardCreator = (obj) => {
   luishrd
   bigknell
   */
+ let cardsDiv = document.querySelector('.cards');
  
  axios.get('https://api.github.com/users/Aaron-Lamb')
  .then(response => {
-   console.log(response)
+  const newCard = userCardCreator(response.data);
+  cardsDiv.appendChild(newCard);
  })
  .catch(error => {
    console.log(error)
