@@ -46,8 +46,19 @@ const followersArray = [];
            userImg.src = obj.avatar_url;
            cardDiv.appendChild(userImg);
            //   <div class="card-info">
+           let infoDiv = document.createElement('div');
+           infoDiv.classList.add('card-info');
+           cardDiv.appendChild(infoDiv);
            //     <h3 class="name">{users name}</h3>
+              let nameHeader = document.createElement('h3');
+              nameHeader.classList.add('name');
+              nameHeader.textContent = obj.name;
+              infoDiv.appendChild(nameHeader);
            //     <p class="username">{users user name}</p>
+              let userName = document.createElement('p');
+              userName.classList.add('username');
+              userName.textContent = obj.login;
+              infoDiv.appendChild(userName);
            //     <p>Location: {users location}</p>
            //     <p>Profile:  
            //       <a href={address to users github page}>{address to users github page}</a>
