@@ -60,10 +60,23 @@ const followersArray = [];
               userName.textContent = obj.login;
               infoDiv.appendChild(userName);
            //     <p>Location: {users location}</p>
+              let locationPar = document.createElement('p');
+              locationPar.textContent = `Location: ${obj.location}`;
+              infoDiv.appendChild(locationPar);
            //     <p>Profile:  
+              let profilePar = document.createElement('p');
+              profilePar.textContent = 'Profile: ';
+              infoDiv.appendChild(profilePar);
            //       <a href={address to users github page}>{address to users github page}</a>
+                  let addressAnch = document.createElement('a');
+                  addressAnch.href = obj.url;
+                  addressAnch.textContent = obj.url;
+                  profilePar.appendChild(addressAnch);
            //     </p>
            //     <p>Followers: {users followers count}</p>
+              let followersPar = document.createElement('p');
+              followersPar.textContent = `Followers: ${obj.followers}`;
+              infoDiv.appendChild(followersPar);
            //     <p>Following: {users following count}</p>
            //     <p>Bio: {users bio}</p>
            //   </div>
